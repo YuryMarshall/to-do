@@ -31,19 +31,19 @@
   @apply text-white font-bold text-2xl h-full flex justify-center items-center mx-10 text-center md:text-3xl lg:text-4xl;
 }
 .tasks__ul {
-  @apply lg:flex w-full  lg:px-10 lg:flex-wrap;
+  @apply lg:flex w-full lg:px-10 lg:flex-wrap;
 }
 .tasks__section {
-  @apply w-full h-3/6  sm:h-4/6;
+  @apply w-full h-1/2;
 }
 .tasks__section__container {
-  @apply h-full w-full overflow-auto;
+  @apply h-full w-full overflow-auto p-5;
 }
 
 /* TodoSection */
 
 .todo__section {
-  @apply w-full  flex flex-col items-center mb-5;
+  @apply w-full  h-1/2 flex flex-col items-center justify-center;
 }
 .todo__title {
   @apply text-blue-300 bg-white h-min px-3 py-2 rounded-2xl font-bold text-2xl mb-7 animate-pulse md:text-3xl xl:text-4xl;
