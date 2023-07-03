@@ -29,14 +29,14 @@ function Routing() {
   }
 
   return (
-    <BrowserRouter basename="">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className={styles.routing__container}>
         <HelpSection state={helpState} handler={helpHandler} />
         <div className="h-screen">
           <Header help={helpHandler} />
           <Routes>
             <Route
-              path=""
+              path="/"
               element={
                 <Main
                   deletedState={deletedTasks}
