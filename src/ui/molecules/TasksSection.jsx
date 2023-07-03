@@ -1,17 +1,16 @@
 import React from "react";
+
 import Task from "../atoms/Task.jsx";
+
+import styles from "./styles/moleculesStyles.module.css";
 
 export default function TasksSection(props) {
   const TasksWindow = () => {
     if (props.definedTasks.length === 0) {
-      return (
-        <div className="text-white font-bold text-2xl h-full flex justify-center items-center mx-10 text-center">
-          Нет задач
-        </div>
-      );
+      return <div className={styles.no__tasks}>Нет задач</div>;
     } else {
       return (
-        <div>
+        <ul className={styles.tasks__ul}>
           {props.definedTasks.map((item) => {
             return (
               <Task
@@ -23,13 +22,13 @@ export default function TasksSection(props) {
               />
             );
           })}
-        </div>
+        </ul>
       );
     }
   };
   return (
-    <section className="w-full h-3/6">
-      <div className="h-full flex-col  overflow-auto ">
+    <section className={styles.tasks__section}>
+      <div className={styles.tasks__section__container}>
         <TasksWindow />
       </div>
     </section>

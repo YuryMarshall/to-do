@@ -1,9 +1,12 @@
-import React from "react";
-import burger from "../../img/burger.svg";
-import { useState } from "react";
-import BurgerMenu from "../atoms/BurgerMenu.jsx";
+import { React, useState } from "react";
 
-export default function Header() {
+import BurgerMenu from "../atoms/BurgerMenu.jsx";
+import NavigationMenu from "../atoms/NavigationMenu.jsx";
+import burger from "../../img/burger.svg";
+
+import styles from "./styles/organismsStyles.module.css";
+
+export default function Header(props) {
   const [menuState, setMenu] = useState(false);
   const BurgerHandler = () => {
     if (menuState === false) {
@@ -12,15 +15,23 @@ export default function Header() {
       setMenu(false);
     }
   };
+
+  const menuData = [
+    { name: "На главную", link: "/" },
+    { name: "Выполненные", link: "/completed" },
+    { name: "Удаленные", link: "/deleted" },
+  ];
+
   return (
-    <div className="w-full  h-20  flex justify-between items-center px-5 mb-36 ">
-      <p className="relative text-3xl font-bold bg-white px-3 pr-6 py-3 rounded-2xl text-blue-300 after:content-['Дел'] after:absolute after:top-0 after:pl-6 after:-right-20 after:text-white  after:border-white after:border-solid after:border-4 after:p-2 after:rounded-2xl">
+    <header className={styles.header}>
+      <button className={styles.logo__button} onClick={props.help}>
         Облако
-      </p>
-      <button className="" onClick={BurgerHandler}>
-        <img src={burger} className="h-10" />
       </button>
-      <BurgerMenu handler={BurgerHandler} state={menuState} />
-    </div>
+      <NavigationMenu data={menuData} />
+      <button className="lg:hidden" onClick={BurgerHandler}>
+        <img src={burger} className="h-10 md:h-12" />
+      </button>
+      <BurgerMenu handler={BurgerHandler} state={menuState} data={menuData} />
+    </header>
   );
 }

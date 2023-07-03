@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import TodoSection from "../molecules/TodoSection.jsx";
@@ -61,7 +60,7 @@ export default function Main(props) {
   }, [props.completedState]);
 
   return (
-    <div className="h-5/6 ">
+    <div className="h-5/6">
       <TodoSection
         submit={submitHandler}
         value={userTask}

@@ -1,18 +1,17 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
+import styles from "./styles/atomsStyles.module.css";
+
 export default function CompletedMap() {
   const tasks = JSON.parse(localStorage.getItem("deletedTasks"));
   const TaskMap = () => {
-    if (tasks) {
+    if (tasks[0]) {
       return (
         <ul>
           {tasks.reverse().map((item) => {
             return (
-              <li
-                className="text-2xl font-bold text-white shadow-lg border-white border-2 border-solid py-2 rounded-xl px-3 flex justify-center mb-5 bg-black bg-opacity-50"
-                key={uuidv4()}
-              >
+              <li className={styles.deleted__li} key={uuidv4()}>
                 {item}
               </li>
             );
@@ -21,9 +20,7 @@ export default function CompletedMap() {
       );
     } else {
       return (
-        <h2 className=" flex justify-center text-xl font-bold text-center mt-36 text-blue-500 ">
-          Вы не удалили ни одного дела
-        </h2>
+        <h2 className={styles.no__completed}>Вы не удалили ни одного дела</h2>
       );
     }
   };

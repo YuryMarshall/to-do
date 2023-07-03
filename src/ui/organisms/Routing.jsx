@@ -1,26 +1,39 @@
-import React from "react";
+import { React, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
 
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Main from "./Main.jsx";
 import CompletedPage from "../molecules/CompletedPage.jsx";
 import DeletedPage from "../molecules/DeletedPage.jsx";
+import HelpSection from "../molecules/HelpSection.jsx";
+
+import styles from "./styles/organismsStyles.module.css";
 
 function Routing() {
   const delTasks = localStorage.getItem("deletedTasks");
-  const [deletedTasks, setDeleted] = useState(JSON.parse(delTasks) || []);
   const doneTasks = localStorage.getItem("completedTasks");
+
+  const [deletedTasks, setDeleted] = useState(JSON.parse(delTasks) || []);
   const [completedTasks, setCompletedTasks] = useState(
     JSON.parse(doneTasks) || []
   );
+  const [helpState, setHelpState] = useState(false);
+
+  function helpHandler() {
+    if (helpState) {
+      setHelpState(false);
+    } else {
+      setHelpState(true);
+    }
+  }
 
   return (
     <BrowserRouter basename="/">
-      <div className="font-montser bg-bggsky bg-no-repeat bg-cover">
+      <div className={styles.routing__container}>
+        <HelpSection state={helpState} handler={helpHandler} />
         <div className="h-screen">
-          <Header />
+          <Header help={helpHandler} />
           <Routes>
             <Route
               path="/"

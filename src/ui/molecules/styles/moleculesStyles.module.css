@@ -1,0 +1,50 @@
+/* CompletedPage / DeletedPage */
+.completed__page__container {
+  @apply px-10 sm:flex sm:flex-col sm:items-center;
+}
+.completed__page__tiltle {
+  @apply text-blue-300 bg-white h-min px-2 py-2 rounded-2xl font-bold text-2xl mb-7 text-center md:text-3xl;
+}
+
+/* HelpSection */
+.section__visible {
+  @apply absolute w-full h-full bg-black z-50 bg-opacity-80 flex items-center justify-center;
+}
+.help__container {
+  @apply px-10 flex flex-col overflow-hidden md:items-center lg:h-full lg:justify-center;
+}
+.text__logo__container {
+  @apply flex mb-20 relative sm:pt-10;
+}
+.help__text {
+  @apply text-white text-xl font-bold w-2/3 sm:text-2xl lg:text-3xl;
+}
+.help__img {
+  @apply absolute -right-32 top-16 h-64 animate-bounce  sm:-right-10 sm:top-12 lg:h-72 lg:top-11 xl:h-96 xl:right-20 xl:top-0;
+}
+.help__button {
+  @apply text-white text-2xl font-bold py-5 bg-green-500 w-full hover:scale-110 active:scale-90 md:px-10 lg:text-3xl;
+}
+
+/* TasksSection */
+.no__tasks {
+  @apply text-white font-bold text-2xl h-full flex justify-center items-center mx-10 text-center md:text-3xl lg:text-4xl;
+}
+.tasks__ul {
+  @apply lg:flex w-full  lg:px-10 lg:flex-wrap;
+}
+.tasks__section {
+  @apply w-full h-3/6  sm:h-4/6;
+}
+.tasks__section__container {
+  @apply h-full w-full overflow-auto;
+}
+
+/* TodoSection */
+
+.todo__section {
+  @apply w-full  flex flex-col items-center mb-5;
+}
+.todo__title {
+  @apply text-blue-300 bg-white h-min px-3 py-2 rounded-2xl font-bold text-2xl mb-7 animate-pulse md:text-3xl xl:text-4xl;
+}

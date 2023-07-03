@@ -1,0 +1,28 @@
+/* Routing */
+.routing__container {
+  @apply font-montser bg-bggsky bg-no-repeat bg-cover relative;
+}
+
+/* Header */
+
+.header {
+  @apply w-full  h-20  flex justify-between items-center px-5 mb-36;
+}
+.logo__button {
+  @apply relative text-3xl font-bold bg-white px-3 pr-6 py-3 rounded-2xl text-blue-300 after:content-['Дел'] after:absolute after:top-0 after:pl-6 after:-right-20 after:text-white  after:border-white after:border-solid after:border-4 after:p-2 after:rounded-2xl lg:text-4xl lg:after:-right-28 lg:after:pl-11;
+}
+
+/* Footer */
+
+.footer {
+  @apply border-t-2 border-solid border-gray-300 flex flex-col items-center pt-4 text-lg font-bold text-gray-500 mt-1;
+}
+.title {
+  @apply mb-2 text-center;
+}
+.link {
+  @apply text-blue-600 underline;
+}
+.img {
+  @apply h-14 mb-4;
+}
