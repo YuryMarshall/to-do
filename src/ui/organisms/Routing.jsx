@@ -29,14 +29,14 @@ function Routing() {
   }
 
   return (
-    <BrowserRouter basename="/to-do/">
+    <BrowserRouter basename="">
       <div className={styles.routing__container}>
         <HelpSection state={helpState} handler={helpHandler} />
         <div className="h-screen">
           <Header help={helpHandler} />
           <Routes>
             <Route
-              path="/to-do/"
+              path=""
               element={
                 <Main
                   deletedState={deletedTasks}

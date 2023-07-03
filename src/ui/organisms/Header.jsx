@@ -17,7 +17,7 @@ export default function Header(props) {
   };
 
   const menuData = [
-    { name: "На главную", link: "/to-do/" },
+    { name: "На главную", link: "" },
     { name: "Выполненные", link: "/completed" },
     { name: "Удаленные", link: "/deleted" },
   ];
