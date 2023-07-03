@@ -32,7 +32,7 @@ function Routing() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className={styles.routing__container}>
         <HelpSection state={helpState} handler={helpHandler} />
-        <div className="h-screen ">
+        <div className="h-screen">
           <Header help={helpHandler} />
           <Routes>
             <Route

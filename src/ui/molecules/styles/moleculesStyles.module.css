@@ -37,7 +37,7 @@
   @apply w-full h-1/2;
 }
 .tasks__section__container {
-  @apply h-full w-full overflow-auto p-5;
+  @apply h-full w-full overflow-auto p-5 scrollbar-none;
 }
 
 /* TodoSection */

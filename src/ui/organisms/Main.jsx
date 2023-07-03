@@ -60,7 +60,7 @@ export default function Main(props) {
   }, [props.completedState]);
 
   return (
-    <div className="h-5/6  ">
+    <div className="h-5/6">
       <TodoSection
         submit={submitHandler}
         value={userTask}
