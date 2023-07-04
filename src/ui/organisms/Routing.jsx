@@ -19,6 +19,20 @@ function Routing() {
     JSON.parse(doneTasks) || []
   );
   const [helpState, setHelpState] = useState(false);
+  const [menuState, setMenu] = useState(false);
+
+  const BurgerHandler = () => {
+    if (menuState === false) {
+      setMenu(true);
+    } else {
+      setMenu(false);
+    }
+  };
+  const sectionBurgerHandler = () => {
+    if (menuState === true) {
+      setMenu(false);
+    }
+  };
 
   function helpHandler() {
     if (helpState) {
@@ -30,10 +44,14 @@ function Routing() {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <div className={styles.routing__container}>
+      <div className={styles.routing__container} onClick={sectionBurgerHandler}>
         <HelpSection state={helpState} handler={helpHandler} />
         <div className="h-screen">
-          <Header help={helpHandler} />
+          <Header
+            help={helpHandler}
+            burgerState={menuState}
+            burgerHandler={BurgerHandler}
+          />
           <Routes>
             <Route
               path="/"

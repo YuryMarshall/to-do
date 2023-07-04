@@ -1,7 +1,7 @@
 /* BurgerMenu */
 
 .burger__menu__container {
-  @apply absolute right-0 top-20 text-blue-300 bg-white bg-opacity-75 text-2xl font-semibold border-4 border-solid border-white cursor-pointer z-10 md:text-3xl;
+  @apply absolute right-0 top-28 text-blue-300 bg-white bg-opacity-75 text-2xl font-semibold border-4 border-solid border-white cursor-pointer z-10 md:text-3xl;
 }
 .burger__menu__hidden {
   @apply hidden;

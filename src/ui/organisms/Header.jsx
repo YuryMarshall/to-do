@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 
 import BurgerMenu from "../atoms/BurgerMenu.jsx";
 import NavigationMenu from "../atoms/NavigationMenu.jsx";
@@ -7,15 +7,6 @@ import burger from "../../img/burger.svg";
 import styles from "./styles/organismsStyles.module.css";
 
 export default function Header(props) {
-  const [menuState, setMenu] = useState(false);
-  const BurgerHandler = () => {
-    if (menuState === false) {
-      setMenu(true);
-    } else {
-      setMenu(false);
-    }
-  };
-
   const menuData = [
     { name: "На главную", link: "/" },
     { name: "Выполненные", link: "/completed" },
@@ -28,10 +19,14 @@ export default function Header(props) {
         Облако
       </button>
       <NavigationMenu data={menuData} />
-      <button className="lg:hidden" onClick={BurgerHandler}>
+      <button className="lg:hidden" onClick={props.burgerHandler}>
         <img src={burger} className="h-10 md:h-12" />
       </button>
-      <BurgerMenu handler={BurgerHandler} state={menuState} data={menuData} />
+      <BurgerMenu
+        handler={props.burgerHandler}
+        state={props.burgerState}
+        data={menuData}
+      />
     </header>
   );
 }
