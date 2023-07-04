@@ -11,6 +11,7 @@ module.exports = {
         bgcloud: "url('/src/img/cloud.png')",
         delete: "url('/src/img/delete.png')",
         done: "url('/src/img/tick.png')",
+        back: "url('/src/img/back.png')",
       },
     },
   },

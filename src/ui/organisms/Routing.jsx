@@ -47,7 +47,12 @@ function Routing() {
               }
             />
             <Route path="/completed" element={<CompletedPage />} />
-            <Route path="/deleted" element={<DeletedPage />} />
+            <Route
+              path="/deleted"
+              element={
+                <DeletedPage deleted={deletedTasks} handler={setDeleted} />
+              }
+            />
           </Routes>
         </div>
         <Footer />
