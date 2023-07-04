@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/atomsStyles.module.css";
 
 export default function CompletedMap(props) {
-  const [tasks, setTasks] = useState(props.deleted || []);
+  const [tasks, setTasks] = useState(props.deleted.slice(-5) || []);
   const allTasks = JSON.parse(localStorage.getItem("tasks"));
 
   const returnHandler = (e) => {
@@ -19,8 +19,11 @@ export default function CompletedMap(props) {
     );
     localStorage.setItem("tasks", JSON.stringify(newTasksArr));
     props.handler(newDeletedTasks);
-    localStorage.setItem("deletedTasks", JSON.stringify(newDeletedTasks));
-    setTasks(newDeletedTasks);
+    localStorage.setItem(
+      "deletedTasks",
+      JSON.stringify(newDeletedTasks.slice(-5))
+    );
+    setTasks(newDeletedTasks.slice(-5));
   };
   const TaskMap = () => {
     if (tasks[0]) {
