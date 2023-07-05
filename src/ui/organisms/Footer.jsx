@@ -18,7 +18,9 @@ export default function Footer() {
         </a>{" "}
         специально для:
       </h2>
-      <img src={SolarLogo} alt="Solarlab logo" className={styles.img} />
+      <a href="https://solarlab.ru/">
+        <img src={SolarLogo} alt="Solarlab logo" className={styles.img} />
+      </a>
       <p>Севастополь {nowDate.getFullYear()} </p>
     </footer>
   );
