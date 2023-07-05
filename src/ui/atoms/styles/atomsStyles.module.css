@@ -51,7 +51,7 @@
 
 /* TaskForm */
 .form {
-  @apply w-4/5 flex flex-col items-center xl:w-3/5 xl:flex-row xl:mb-5;
+  @apply w-4/5 flex flex-col items-center xl:w-3/5 xl:flex-row xl:mb-5 relative;
 }
 .input {
   @apply bg-transparent border-white border-4 border-solid w-full  text-blue-600 text-xl font-semibold rounded-2xl p-3 mb-5 md:text-3xl xl:mr-5 xl:mb-0;
@@ -61,4 +61,7 @@
 }
 .submit__button {
   @apply bg-white px-4 py-2 text-xl font-bold text-blue-300 rounded-2xl hover:scale-110 active:scale-95 md:text-2xl xl:text-4xl;
+}
+.symbols__number {
+  @apply absolute -bottom-10 left-0 text-red-400 font-bold;
 }

@@ -9,9 +9,7 @@ export default function TaskForm(props) {
         type="text"
         className={props.state ? styles.input__error : styles.input}
         placeholder={
-          props.state
-            ? "Задача слишком короткая или длинная"
-            : "Описание (30 символов)"
+          props.state ? "Задача слишком короткая или длинная" : "Описание"
         }
         onChange={props.handler}
         value={props.value}
@@ -19,6 +17,10 @@ export default function TaskForm(props) {
       <button type="submit" className={styles.submit__button}>
         Добавить
       </button>
+      <p className={props.value ? styles.symbols__number : "hidden"}>
+        Осталось {30 - props.value.length > 0 ? 30 - props.value.length : "0"}{" "}
+        символов
+      </p>
     </form>
   );
 }
