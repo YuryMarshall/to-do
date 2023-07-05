@@ -5,7 +5,7 @@ import TodoSection from "../molecules/TodoSection.jsx";
 import TasksSection from "../molecules/TasksSection.jsx";
 
 export default function Main(props) {
-  const tasks = localStorage.getItem("tasks");
+  const tasks = localStorage.getItem(props.storageKeys.AllTasks);
 
   const [userTask, setTask] = useState("");
   const [userTasks, changeTasks] = useState(JSON.parse(tasks) || []);
@@ -16,19 +16,18 @@ export default function Main(props) {
   };
 
   const submitHandler = (e) => {
+    e.preventDefault();
+    setTask("");
     if (userTask.trim() !== "" && userTask.length < 30) {
       const newTask = {
         id: uuidv4(),
         text: userTask,
       };
-      e.preventDefault();
+
       setFormState(false);
       changeTasks((userTasks) => [...userTasks, newTask]);
-      setTask("");
     } else {
-      e.preventDefault();
       setFormState(true);
-      setTask("");
     }
   };
   const deleteTask = (e) => {
@@ -42,20 +41,20 @@ export default function Main(props) {
   };
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(userTasks));
+    localStorage.setItem(props.storageKeys.AllTasks, JSON.stringify(userTasks));
   }, [userTasks]);
 
   useEffect(() => {
     localStorage.setItem(
-      "deletedTasks",
-      JSON.stringify(props.deletedState.slice(-5))
+      props.storageKeys.DeletedTasks,
+      JSON.stringify(props.deletedState.slice(props.number))
     );
   }, [props.deletedState]);
 
   useEffect(() => {
     localStorage.setItem(
-      "completedTasks",
-      JSON.stringify(props.completedState.slice(-5))
+      props.storageKeys.CompletedTasks,
+      JSON.stringify(props.completedState.slice(props.number))
     );
   }, [props.completedState]);
 

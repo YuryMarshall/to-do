@@ -11,10 +11,18 @@ import HelpSection from "../molecules/HelpSection.jsx";
 import styles from "./styles/organismsStyles.module.css";
 
 function Routing() {
-  const delTasks = localStorage.getItem("deletedTasks");
-  const doneTasks = localStorage.getItem("completedTasks");
+  const StorageKeys = {
+    AllTasks: "tasks",
+    CompletedTasks: "completedTasks",
+    DeletedTasks: "deletedTasks",
+  };
+  const numberOfTasks = -5;
+  const deletedTasksArr = localStorage.getItem(StorageKeys.DeletedTasks);
+  const doneTasks = localStorage.getItem(StorageKeys.CompletedTasks);
 
-  const [deletedTasks, setDeleted] = useState(JSON.parse(delTasks) || []);
+  const [deletedTasks, setDeleted] = useState(
+    JSON.parse(deletedTasksArr) || []
+  );
   const [completedTasks, setCompletedTasks] = useState(
     JSON.parse(doneTasks) || []
   );
@@ -22,14 +30,14 @@ function Routing() {
   const [menuState, setMenu] = useState(false);
 
   const BurgerHandler = () => {
-    if (menuState === false) {
+    if (!menuState) {
       setMenu(true);
     } else {
       setMenu(false);
     }
   };
   const sectionBurgerHandler = () => {
-    if (menuState === true) {
+    if (menuState) {
       setMenu(false);
     }
   };
@@ -61,14 +69,29 @@ function Routing() {
                   deletedStateHandler={setDeleted}
                   completedState={completedTasks}
                   completedStateHandler={setCompletedTasks}
+                  number={numberOfTasks}
+                  storageKeys={StorageKeys}
                 />
               }
             />
-            <Route path="/completed" element={<CompletedPage />} />
+            <Route
+              path="/completed"
+              element={
+                <CompletedPage
+                  number={numberOfTasks}
+                  storageKeys={StorageKeys}
+                />
+              }
+            />
             <Route
               path="/deleted"
               element={
-                <DeletedPage deleted={deletedTasks} handler={setDeleted} />
+                <DeletedPage
+                  deleted={deletedTasks}
+                  handler={setDeleted}
+                  number={numberOfTasks}
+                  storageKeys={StorageKeys}
+                />
               }
             />
           </Routes>

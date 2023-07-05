@@ -6,7 +6,7 @@
 .burger__menu__hidden {
   @apply hidden;
 }
-.menu__li {
+.menu__list__item {
   @apply hover:bg-gray-300 pt-5 pb-3 px-4 hover:text-white;
 }
 
@@ -15,10 +15,10 @@
 .no__completed {
   @apply flex justify-center text-xl font-bold text-center mt-36 text-blue-500 md:text-2xl lg:text-3xl;
 }
-.completed__li {
+.completed__list__item {
   @apply text-2xl font-bold text-white shadow-lg border-white border-2 border-solid py-2 rounded-xl px-3 flex justify-center items-center mb-5 bg-green-400 bg-opacity-50  md:text-3xl;
 }
-.deleted__li {
+.deleted__list__item {
   @apply text-2xl font-bold text-blue-300 shadow-lg border-white border-2 border-solid py-2 rounded-xl px-3 flex justify-center mb-5 bg-white bg-opacity-50  md:text-3xl;
 }
 
@@ -27,7 +27,7 @@
 .nav__container {
   @apply hidden lg:flex font-bold text-blue-300  w-2/3 lg:justify-center  h-12;
 }
-.nav__ul {
+.nav__list {
   @apply flex text-2xl bg-white w-full justify-center  h-full  rounded-2xl xl:text-3xl;
 }
 .nav__link {
@@ -36,7 +36,7 @@
 
 /* Task */
 
-.task__li {
+.task__list__item {
   @apply relative w-2/3 h-36 mx-auto bg-bgcloud bg-no-repeat bg-contain flex justify-center items-center mb-12 md:w-2/4 md:justify-start md:h-40 xl:bg-center lg:justify-center lg:h-48;
 }
 .task__text {
@@ -54,7 +54,7 @@
   @apply w-4/5 flex flex-col items-center xl:w-3/5 xl:flex-row xl:mb-5;
 }
 .input {
-  @apply bg-transparent border-white border-4 border-solid w-full  text-blue-600 text-2xl font-semibold rounded-2xl p-3 mb-5 md:text-3xl xl:mr-5 xl:mb-0;
+  @apply bg-transparent border-white border-4 border-solid w-full  text-blue-600 text-xl font-semibold rounded-2xl p-3 mb-5 md:text-3xl xl:mr-5 xl:mb-0;
 }
 .input__error {
   @apply bg-transparent border-red-500 border-4 border-solid w-full placeholder-red-500 text-blue-600 text-sm font-semibold rounded-2xl p-3 mb-5 md:text-2xl xl:mr-5 xl:mb-0;

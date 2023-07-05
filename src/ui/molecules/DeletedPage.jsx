@@ -9,7 +9,12 @@ function DeletedPage(props) {
       <h1 className={styles.completed__page__tiltle}>
         5 последних дел, которые пришлось отменить
       </h1>
-      <DeletedMap deleted={props.deleted} handler={props.handler} />
+      <DeletedMap
+        deleted={props.deleted}
+        handler={props.handler}
+        number={props.number}
+        storageKeys={props.storageKeys}
+      />
     </div>
   );
 }

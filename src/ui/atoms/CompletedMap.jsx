@@ -3,15 +3,17 @@ import { v4 as uuidv4 } from "uuid";
 
 import styles from "./styles/atomsStyles.module.css";
 
-export default function CompletedMap() {
-  const tasks = JSON.parse(localStorage.getItem("completedTasks"));
+export default function CompletedMap(props) {
+  const tasks = JSON.parse(
+    localStorage.getItem(props.storageKeys.CompletedTasks)
+  ).reverse();
   const TaskMap = () => {
     if (tasks[0]) {
       return (
         <ul>
-          {tasks.reverse().map((item) => {
+          {tasks.map((item) => {
             return (
-              <li className={styles.completed__li} key={uuidv4()}>
+              <li className={styles.completed__list__item} key={uuidv4()}>
                 {item}
               </li>
             );

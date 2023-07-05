@@ -6,7 +6,7 @@ import styles from "./styles/atomsStyles.module.css";
 export default function NavigationMenu(props) {
   return (
     <nav className={styles.nav__container}>
-      <ul className={styles.nav__ul}>
+      <ul className={styles.nav__list}>
         {props.data.map((item, index) => {
           return (
             <NavLink to={item.link} className={styles.nav__link} key={index}>

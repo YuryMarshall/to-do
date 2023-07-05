@@ -10,14 +10,14 @@ export default function TasksSection(props) {
       return <div className={styles.no__tasks}>Нет задач</div>;
     } else {
       return (
-        <ul className={styles.tasks__ul}>
+        <ul className={styles.tasks__list__container}>
           {props.definedTasks.map((item) => {
             return (
               <Task
                 name={item.text}
                 key={item.id}
                 id={item.id}
-                delHandler={props.deleteHandler}
+                deleteHandler={props.deleteHandler}
                 completeHandler={props.completeHandler}
               />
             );

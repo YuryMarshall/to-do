@@ -5,6 +5,7 @@ import SolarLogo from "../../img/solarlab.png";
 import styles from "./styles/organismsStyles.module.css";
 
 export default function Footer() {
+  const nowDate = new Date();
   return (
     <footer className={styles.footer}>
       <h2 className={styles.title}>
@@ -18,7 +19,7 @@ export default function Footer() {
         специально для:
       </h2>
       <img src={SolarLogo} alt="Solarlab logo" className={styles.img} />
-      <p className="">Севастополь 2023</p>
+      <p>Севастополь {nowDate.getFullYear()} </p>
     </footer>
   );
 }

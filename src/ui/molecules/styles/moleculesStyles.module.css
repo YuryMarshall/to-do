@@ -30,7 +30,7 @@
 .no__tasks {
   @apply text-white font-bold text-2xl h-full flex justify-center items-center mx-10 text-center md:text-3xl lg:text-4xl;
 }
-.tasks__ul {
+.tasks__list__container {
   @apply lg:flex w-full lg:px-10 lg:flex-wrap;
 }
 .tasks__section {

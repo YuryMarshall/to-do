@@ -14,7 +14,11 @@ export default function BurgerMenu(props) {
     >
       {props.data.map((item, index) => {
         return (
-          <li className={styles.menu__li} onClick={props.handler} key={index}>
+          <li
+            className={styles.menu__list__item}
+            onClick={props.handler}
+            key={index}
+          >
             <NavLink to={item.link}>{item.name}</NavLink>
           </li>
         );

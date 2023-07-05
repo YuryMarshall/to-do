@@ -9,7 +9,9 @@ export default function TaskForm(props) {
         type="text"
         className={props.state ? styles.input__error : styles.input}
         placeholder={
-          props.state ? "Задача слишком короткая или длинная" : "Описание"
+          props.state
+            ? "Задача слишком короткая или длинная"
+            : "Описание (30 символов)"
         }
         onChange={props.handler}
         value={props.value}
