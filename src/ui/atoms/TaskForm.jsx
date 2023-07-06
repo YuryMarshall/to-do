@@ -18,8 +18,8 @@ export default function TaskForm(props) {
         Добавить
       </button>
       <p className={props.value ? styles.symbols__number : "hidden"}>
-        Осталось {29 - props.value.length >= 0 ? 29 - props.value.length : "0"}{" "}
-        символов
+        Осталось символов:{" "}
+        {29 - props.value.length >= 0 ? 29 - props.value.length : "0"}
       </p>
     </form>
   );
